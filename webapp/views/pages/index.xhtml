@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+ 
+<h:head>
+    <title>main page</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+</h:head>
+<h:body>
+    <div class="header">
+        <img src="../img/snowflake_basic.png" alt="" id="sf1" />
+        <img src="../img/snowflake_basic.png" alt="" id="sf2" />
+        <img src="../img/snowflake_basic.png" alt="" id="sf3" />
+        <img src="../img/snowflake_basic.png" alt="" id="sf4" />
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <h:form id="form">
+        <label for="spinner">Set X:</label>
+        <p:spinner id="spinner" required="true" stepFactor="1" min="-3" max="3" value="#{formBean.x}" styleClass="input-text" /> <br />
+
+        <br />
+
+        <label for="inputY">Set Y:</label> <br />
+        <h:inputText id="inputY" required="true" value="#{formBean.y}" styleClass="input-y" validatorMessage="Y value must be in range [-5; 5]" converterMessage="Y value must be a num in range [-5; 5]" requiredMessage="Set Y value!">
+            <f:validateDoubleRange minimum="-5" maximum="5" />
+        </h:inputText> <br />
+        <h:message for="inputY" style="color: indianred;" />
+
+        <br />
+
+        <p>Set R:</p>
+        <span>1</span><h:selectBooleanCheckbox value="#{formBean.rValues[0]}" onchange="checkboxState(this)" /> <br />
+        <span>2</span><h:selectBooleanCheckbox value="#{formBean.rValues[1]}" onchange="checkboxState(this)" /> <br />
+        <span>3</span><h:selectBooleanCheckbox value="#{formBean.rValues[2]}" onchange="checkboxState(this)" /> <br />
+        <span>4</span><h:selectBooleanCheckbox value="#{formBean.rValues[3]}" onchange="checkboxState(this)" /> <br />
+        <span>5</span><h:selectBooleanCheckbox value="#{formBean.rValues[4]}" onchange="checkboxState(this)" /> <br />
+
+        <br />
+        
+        <h:commandButton id="button" value="Send!" action="#{formBean.submit}" />
+
+        <h:inputHidden id="hiddenX" value="#{formBean.hiddenX}"/>
+        <h:inputHidden id="hiddenY" value="#{formBean.hiddenY}"/>
+    </h:form>
+
+    <br />
+
+    <canvas id="graph" width="340" height="340"></canvas>
+
+    <h:dataTable id="dataTable" value="#{formBean.output}" var="row" border="1">
+        <h:column>
+            <f:facet name="header">X</f:facet>
+            #{row[0]}
+        </h:column>
+        
+        <h:column>
+            <f:facet name="header">Y</f:facet>
+            #{row[1]}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">R</f:facet>
+            #{row[2]}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Result</f:facet>
+            #{row[3]}
+        </h:column>
+    </h:dataTable>
+
+    <script>
+        function checkboxState(currentCheckbox) {
+            let cboxes = document.querySelectorAll('#form input[type="checkbox"]');
+
+            cboxes.forEach((cbox) => {
+                if (cbox != currentCheckbox) cbox.checked = false; 
+            })
+        }
+    </script>
+
+    <script src="../scripts/main.js"></script>
+</h:body>
+</html>

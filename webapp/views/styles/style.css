@@ -1,0 +1,45 @@
+body {
+    background-image: url("../img/bg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.label {
+    font-family: 'Comic Neue', cursive;
+    text-align: center;
+    color: whitesmoke;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 285px;
+    top: 610px;
+    padding: 25px;
+    letter-spacing: 10px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px black;
+}
+
+#jsf {
+    position: absolute;
+    top: 1050px;
+    left: 880px;
+    text-decoration: double;
+    font-weight: bolder;
+    color: whitesmoke;
+    font-size: 50px;
+    text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
+}
+
+#clock {
+    position: absolute;
+    right: 80px;
+    top: 80px;
+}
+
+#arrow {
+    position: absolute;
+    transform: scale(10%);
+    bottom: -900px;
+    right: -600px;
+    transition: 1s;
+}

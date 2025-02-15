@@ -1,0 +1,98 @@
+body {
+    /* font-family: fantasy; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    background-image: url("../img/wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    width: 50%;
+}
+
+.header img {
+    transform: scale(1.5);
+    margin: 25px;
+}
+
+#form {
+    margin: 0;
+    padding: 20px;
+    margin-left: 15px;
+    width: 20%;
+    height: 500px;
+    background-color: #146b3a;
+    color: white;
+    border-radius: 25px;
+    /* box-shadow: 0px 0px 10px 5px #165b33; */
+    transition: 0.7s;
+}
+
+#form:hover {
+    /* box-shadow: 0px 0px 10px 5px #165b33; */
+    box-shadow: 0px 0px 20px 1px black;
+    margin-left: 30px;
+}
+
+.input-text {
+    background-color: #f8b229 !important;
+    color: white;
+    border: none;
+    box-shadow: 0px 0px 7px 2px whitesmoke;
+}
+
+.input-y {
+    background-color: #f8b229;
+    color: white;
+    font-weight: 900;
+    font-size: 25px;
+    height: fit-content;
+    width: 85%;
+    text-align: right;
+    border: none;
+    box-shadow: 0px 0px 7px 2px #f8b229;
+}
+
+#form\:button {
+    display: block;
+    margin: 0 auto;
+    background-image: url("../img/candy.png");
+    background-size: contain;
+    color: darkred;
+    font-size: 30px;
+    height: 10%;
+    font-weight: 900;
+    width: 50%;
+    text-shadow: 1px 1px 5px goldenrod;
+    transition: 5s;
+    border-radius: 50px;
+}
+
+#form\:button:hover {
+    box-shadow: 0px 0px 7px 2px white;
+    background-position: 500px;
+    transition: 5s;
+}
+
+input[type="checkbox"] {
+    accent-color: crimson;
+}
+
+#graph {
+    /* width: 20%;
+    height: 338px; */
+    /* width: 200px;
+    height: 200px; */
+    background-color: #146b3a;
+    border-radius: 25px;
+    transition: 0.7s;
+    margin-left: 15px;
+}
+
+#graph:hover {
+    /* box-shadow: 0px 0px 10px 5px #165b33; */
+    box-shadow: 0px 0px 20px 1px black;
+    margin-left: 30px;
+}
